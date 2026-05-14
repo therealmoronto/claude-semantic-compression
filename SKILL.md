@@ -75,9 +75,12 @@ Don't invent your own markers outside the Information Compression Protocol.
 
 ## Example: code generation prompt
 Before:
-
 ```"Write a function that confirms an order if the item is in stock, payment has been successfully processed, and the order has not been cancelled within the last 5 minutes."```
 
 After:
-
-```Biz: →code; Impl: confirm_order(order) → bool Cond: order.has_stock ∧ order.payment_ok ∧ ¬order.cancelled[Δt ≤ 5min] Return True only if all three conditions are met.```
+```
+Biz: →code;
+Impl: confirm_order(order) → bool
+Cond: order.has_stock ∧ order.payment_ok ∧ ¬order.cancelled[Δt ≤ 5min]
+Return True only if all three conditions are met.
+```
