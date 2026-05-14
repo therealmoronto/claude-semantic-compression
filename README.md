@@ -91,6 +91,6 @@ These control the format of the final response and the priorities.
 
 ## 🤝 Acknowledgements and original source
 
-This skill is inspired by and based on the concept of semantic logic compression (the **Ovchinnikov Effect**), originally developed in the https://github.com/Germesych/ovchinnikov-semantic-core repository (https://github.com/Germesych/ovchinnikov-semantic-core). 
+This skill is inspired by and based on the concept of semantic logic compression (the **Ovchinnikov Effect**), originally developed in the [repository](https://github.com/Germesych/ovchinnikov-semantic-core). 
 
 I would like to thank the author of the original protocol (Information Compression Protocol) for the idea of optimising interaction with LLMs. The original project is also distributed under the MIT licence.
