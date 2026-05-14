@@ -1,12 +1,7 @@
 ---
 name: semantic-compression
 description: >
-  Apply semantic logic compression (Ovchinnikov method) when crafting prompts for LLMs or
-  describing complex conditional logic. Use this skill whenever the user asks to:
-  write or optimize a prompt for an LLM, compress or rewrite a task description,
-  describe multi-condition business logic (if/and/or/not chains), or asks why an LLM
-  misunderstood their instructions. Also trigger when the user says "сожми логику",
-  "напиши промпт для", "LLM не понимает", "упрости условия", or similar intent.
+  Apply semantic logic compression (Ovchinnikov method) when crafting prompts for LLMs or describing complex conditional logic. Use this skill whenever the user asks to: write or optimise a prompt for an LLM, compress or rewrite a task description, describe multi-condition business logic (if/and/or/not chains), or asks why an LLM misunderstood their instructions. Also trigger when the user says ‘compress the logic’, ‘write a prompt for’, ‘the LLM doesn't understand’, ‘simplify the conditions’, or similar intents. Also trigger when the user wants to use output modifiers such as →code or →no-meta, or domain prefixes such as Dev:, Biz:, Sec:.
 ---
 
 # Semantic Logic Compression (Information Compression Protocol)
@@ -67,7 +62,7 @@ Compressed:
   Dev: →code; Stack: Py/MongoDB; Req: (active=true ∧ ¬ban); →no-meta; →no-safe
 ```
 
-# What NOT to do
+## What NOT to do
 Don't compress non-conditional descriptive text (it won't help)
 
 Don't drop temporal constraints — they're often the part LLMs miss most
@@ -78,14 +73,11 @@ If logic is simple (1-2 conditions), natural language is fine — say so
 
 Don't invent your own markers outside the Information Compression Protocol.
 
-# Example: code generation prompt
+## Example: code generation prompt
 Before:
 
-> `"Напиши функцию, которая подтверждает заказ, если товар есть на складе, оплата прошла успешно, и заказ не был отменён в течение последних 5 минут."`
+```"Write a function that confirms an order if the item is in stock, payment has been successfully processed, and the order has not been cancelled within the last 5 minutes."```
 
 After:
 
-> `Biz: →code;` <br/>
-> `Impl: confirm_order(order) → bool` <br/>
-> `Cond: order.has_stock ∧ order.payment_ok ∧ ¬order.cancelled[Δt ≤ 5min]` <br/>
-> `Return True only if all three conditions are met.`
+```Biz: →code; Impl: confirm_order(order) → bool Cond: order.has_stock ∧ order.payment_ok ∧ ¬order.cancelled[Δt ≤ 5min] Return True only if all three conditions are met.```
