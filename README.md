@@ -29,7 +29,7 @@ As a result, the LLM receives a clear framework for action without any ‘fluff�
 
 ```bash
 mkdir -p ~/.claude/skills
-git clone [https://github.com/therealmoronto/claude-semantic-compression.git](https://github.com/therealmoronto/claude-semantic-compression.git) ~/.claude/skills/semantic-compression
+git clone https://github.com/therealmoronto/claude-semantic-compression.git ~/.claude/skills/semantic-compression
 ```
 
 Or copy the skill file manually if you have already cloned the repository to your computer:
@@ -43,7 +43,7 @@ cp SKILL.md ~/.claude/skills/semantic-compression/
 Clone the repository directly into the OpenCode skills directory:
 ```bash
 mkdir -p ~/.config/opencode/skills
-git clone [https://github.com/ВАШ_ЮЗЕРНЕЙМ/semantic-compression.git](https://github.com/ВАШ_ЮЗЕРНЕЙМ/semantic-compression.git) ~/.config/opencode/skills/semantic-compression
+git clone https://github.com/therealmoronto/semantic-compression.git ~/.config/opencode/skills/semantic-compression
 ```
 
 Or copy the skill file manually:
